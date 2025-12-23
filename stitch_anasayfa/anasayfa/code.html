@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mobil Oyun Haberleri - Anasayfa</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#7f0df2",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#191022",
+                        "surface-dark": "#261834",
+                        "surface-highlight": "#362249"
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display overflow-x-hidden pb-24">
+<div class="sticky top-0 z-20 flex items-center bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md p-4 pb-2 justify-between">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border-2 border-primary" data-alt="Avatar of the user profile" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDW6QnHz49L8UkGOyoizEimwKi7ILnrs0q0ZBCM8UGPPtziIF4fPpR4qXDAwTPkuhEgBGq7k-9yyBl2cJhvqshRLTD32T0Zl-nylI0sFLkHrbQFRNSFY7D2H9ik5wx_ztBihKNlTE6xLJamHnQWvkSQu0zilW44CS_mzgKVZ3CnrTk8f_bQzPYpz_v2h8f_91T_YXgNrTRUmt5Z848XpfOSJybhkyNEy6O1jb0Vpo25SK7qa3kvv2_voTu68Q-CY-lIkcsCK15FFTUs");'></div>
+<div class="absolute bottom-0 right-0 size-3 bg-green-500 rounded-full border-2 border-[#1a1023]"></div>
+</div>
+<div>
+<p class="text-xs text-slate-500 dark:text-[#ad90cb] font-medium">Hoş geldin,</p>
+<h2 class="text-slate-900 dark:text-white text-sm font-bold leading-tight">Batuhan</h2>
+</div>
+</div>
+<div class="flex items-center justify-end gap-2">
+<button class="flex items-center justify-center rounded-full size-10 bg-white dark:bg-surface-dark shadow-sm hover:bg-slate-100 dark:hover:bg-surface-highlight transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-white" style="font-size: 24px;">search</span>
+</button>
+<button class="relative flex items-center justify-center rounded-full size-10 bg-white dark:bg-surface-dark shadow-sm hover:bg-slate-100 dark:hover:bg-surface-highlight transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-white" style="font-size: 24px;">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full"></span>
+</button>
+</div>
+</div>
+<div class="px-4 pt-2">
+<h1 class="text-slate-900 dark:text-white text-[28px] font-bold leading-tight">Bugün ne oynamak istersin?</h1>
+</div>
+<div class="flex gap-3 px-4 py-6 overflow-x-auto no-scrollbar snap-x">
+<button class="snap-start flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary pl-5 pr-5 shadow-lg shadow-primary/25 transition-transform active:scale-95">
+<span class="text-white text-sm font-semibold">Tümü</span>
+</button>
+<button class="snap-start flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-surface-highlight border border-slate-200 dark:border-transparent pl-5 pr-5 transition-transform active:scale-95">
+<span class="text-slate-700 dark:text-white text-sm font-medium">Haberler</span>
+</button>
+<button class="snap-start flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-surface-highlight border border-slate-200 dark:border-transparent pl-5 pr-5 transition-transform active:scale-95">
+<span class="text-slate-700 dark:text-white text-sm font-medium">Hileler</span>
+</button>
+<button class="snap-start flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-surface-highlight border border-slate-200 dark:border-transparent pl-5 pr-5 transition-transform active:scale-95">
+<span class="text-slate-700 dark:text-white text-sm font-medium">Güncellemeler</span>
+</button>
+<button class="snap-start flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-surface-highlight border border-slate-200 dark:border-transparent pl-5 pr-5 transition-transform active:scale-95">
+<span class="text-slate-700 dark:text-white text-sm font-medium">Soru-Cevap</span>
+</button>
+</div>
+<div class="px-4 pb-6">
+<div class="flex flex-col items-start justify-start rounded-xl overflow-hidden shadow-lg bg-white dark:bg-surface-dark relative group">
+<div class="w-full h-56 relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="PUBG Mobile game map screenshot with tactical view" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA9EmpUfeoqt1Cx58d9BMZwtEhBiwXfZWacM_eB4r0U8Soy6PQTdX9kdD0uzyDiiNIVepLCMuxASSbAotoB-wkGEBwJpGXdT7j6nwLr_89UpnGEwfOgQaQ_6i9-QulHR1t3dRoG257FSP6Ie-VTh3wDCe0W9FZPBb-S3aAXhjtS__7xRaIYZL9hKmIBTVNuxcCV9t9Gm6u2CId8n5XZ7mF5-GLYe4xbebIHoL4BtlYWBcatIKV0wC0SK4zO-b1WhiMeq9s320Nfqfo6");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+<div class="absolute top-4 left-4 bg-primary/90 backdrop-blur-sm px-3 py-1 rounded-full">
+<p class="text-white text-xs font-bold uppercase tracking-wider">Öne Çıkan</p>
+</div>
+</div>
+<div class="flex w-full flex-col p-5 -mt-16 relative z-10">
+<h3 class="text-white text-2xl font-bold leading-tight mb-2 drop-shadow-md">PUBG Mobile 3.0: Kış Haritası Yayında</h3>
+<p class="text-slate-200 text-sm font-medium leading-relaxed mb-4 line-clamp-2 drop-shadow-sm">Devasa güncelleme ile gelen yeni özellikleri, buzlu bölgeleri ve gizli ganimet noktalarını keşfetmeye hazır mısın?</p>
+<button class="self-start flex items-center justify-center gap-2 rounded-full h-10 px-6 bg-white text-primary text-sm font-bold hover:bg-slate-100 transition-colors shadow-lg">
+<span>Devamını Oku</span>
+<span class="material-symbols-outlined text-base font-bold">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="px-4 pb-3 flex items-center justify-between">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold">En Yeniler</h3>
+<button class="text-primary text-sm font-semibold hover:underline">Tümünü Gör</button>
+</div>
+<div class="flex flex-col gap-4 px-4">
+<div class="flex items-center gap-4 rounded-xl p-3 bg-white dark:bg-surface-dark shadow-sm active:scale-[0.99] transition-transform cursor-pointer">
+<div class="flex flex-col gap-1 flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<span class="text-[10px] font-bold uppercase tracking-wider text-green-500 bg-green-500/10 px-2 py-0.5 rounded-full">Hileler</span>
+<span class="text-[10px] text-slate-400">2 saat önce</span>
+</div>
+<p class="text-slate-900 dark:text-white text-base font-bold leading-tight line-clamp-2">CoC: En İyi TH12 Savaş Düzeni ve Stratejileri</p>
+<div class="flex items-center gap-1 mt-2">
+<span class="material-symbols-outlined text-slate-400 text-xs">visibility</span>
+<span class="text-xs text-slate-400">1.2b görüntülenme</span>
+</div>
+</div>
+<div class="w-24 h-24 shrink-0 bg-center bg-no-repeat bg-cover rounded-lg" data-alt="Clash of Clans village base layout strategy" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBniGvaVU2qAu0oWoIVJY-BXWqd7fn-zIiPqInhzqOBIDESwYIayVFoKOXmDlX0IpfeqI2oArHmEjrSXRP4_66smYIAHw1eIMlVU0pye6Bh1c29fn4wAR5DxukDATnYgQVuXXRTEb-F67yTywOEnYnjeouuYZLIlLU8n2K9Pcc6C9qLLrP_IRGeEr4IRu-d2aRNfHiDSMUQWLaX9WAYSFwtP-xcFTSh0Qm_ZxrGxm6JyL-hVcKYQWrWObsLwTa3XEcLRQHjFaohrNH8");'></div>
+</div>
+<div class="flex items-center gap-4 rounded-xl p-3 bg-white dark:bg-surface-dark shadow-sm active:scale-[0.99] transition-transform cursor-pointer">
+<div class="flex flex-col gap-1 flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<span class="text-[10px] font-bold uppercase tracking-wider text-blue-400 bg-blue-400/10 px-2 py-0.5 rounded-full">Haberler</span>
+<span class="text-[10px] text-slate-400">5 saat önce</span>
+</div>
+<p class="text-slate-900 dark:text-white text-base font-bold leading-tight line-clamp-2">Brawl Stars: Yeni Efsanevi Karakter 'Draco' Sızdırıldı!</p>
+<div class="flex items-center gap-1 mt-2">
+<span class="material-symbols-outlined text-slate-400 text-xs">chat_bubble</span>
+<span class="text-xs text-slate-400">45 yorum</span>
+</div>
+</div>
+<div class="w-24 h-24 shrink-0 bg-center bg-no-repeat bg-cover rounded-lg" data-alt="Abstract colorful neon background representing a generic game character ability" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC8vA7PBtqUwhdZ3gtbAgTvjFBqDIjSxgojSJkmqWkOWB5K_OqeByovdYcGV6TpUxuyAVzbiHaOt3LWznC_N6OdcgSJoRQ6-j__AFI1JPgTDzmc64j5ynCZ_A36L8s0LfSxQ5_UnK1vOxF_YXHZeLWThUKEpEaPQXRylUklZuPK50NE0K848Cv9mkU4RGMBv6VR8ux_PQDtybcfxL2UgljtAb7zRZ2RnT5_kwU43toM7snbOgxbWn6MydbFmxf5p67G4vrwoMGnWlEN");'></div>
+</div>
+<div class="flex items-center gap-4 rounded-xl p-3 bg-white dark:bg-surface-dark shadow-sm active:scale-[0.99] transition-transform cursor-pointer">
+<div class="flex flex-col gap-1 flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<span class="text-[10px] font-bold uppercase tracking-wider text-amber-500 bg-amber-500/10 px-2 py-0.5 rounded-full">Etkinlik</span>
+<span class="text-[10px] text-slate-400">1 gün önce</span>
+</div>
+<p class="text-slate-900 dark:text-white text-base font-bold leading-tight line-clamp-2">Wild Rift Şampiyonluk Turnuvası Kayıtları Başladı</p>
+<div class="flex items-center gap-1 mt-2">
+<span class="material-symbols-outlined text-slate-400 text-xs">event</span>
+<span class="text-xs text-slate-400">Son 2 Gün</span>
+</div>
+</div>
+<div class="w-24 h-24 shrink-0 bg-center bg-no-repeat bg-cover rounded-lg" data-alt="Esports tournament arena stage with purple lighting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAfbSS1foizi0uY81MANeiLfZ-ctotlmcfjqr_EMm34oI-j_TgU1r64Eunv6oDZ67Zh6p7qD3-APBmGHpzDxPwTpQx9_y7AHXPKxnOyRiT3cxFl2jAn5HXmzTppMvafJanqS4VOLUcKkeMz9V_VszALIy9DqIIqgCjBi8QxPQtetHLQgwlg4QiYv6TP_K8Fl0a_gvylBlmMdw1TWjC6qTgX7WCVNu9rM-4TmEk9sLlcRz9t-pRCMpVDV6zxmXpO9_AQngklfecsi0HU");'></div>
+</div>
+<div class="flex items-center gap-4 rounded-xl p-3 bg-white dark:bg-surface-dark shadow-sm active:scale-[0.99] transition-transform cursor-pointer">
+<div class="flex flex-col gap-1 flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<span class="text-[10px] font-bold uppercase tracking-wider text-purple-400 bg-purple-400/10 px-2 py-0.5 rounded-full">Soru-Cevap</span>
+<span class="text-[10px] text-slate-400">1 gün önce</span>
+</div>
+<p class="text-slate-900 dark:text-white text-base font-bold leading-tight line-clamp-2">Hangi telefon oyun için daha iyi? FPS test sonuçları.</p>
+<div class="flex items-center gap-1 mt-2">
+<span class="material-symbols-outlined text-slate-400 text-xs">thumb_up</span>
+<span class="text-xs text-slate-400">89 beğeni</span>
+</div>
+</div>
+<div class="w-24 h-24 shrink-0 bg-center bg-no-repeat bg-cover rounded-lg" data-alt="Close up of a smartphone displaying a high graphics game" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAhcDSodexF9h2JZJJ_z1d3t7JPDAcVA7yHyQYa7WRQRQdMxCijU0wCiCAnnDvUVOhUCqEVME7dr7aMqK6nnR2UI5TMtCkDyMVXx4kCukpWHRb009Ct9tVaHwE7draV2b3tGBsxj5s246Ykc1SNaZy204g_KMrOTHAFTgNFX4CAJwciWzBd27OjevhGDU_fpODHZV4rlf45_DFBGWu_iCsRw6hDyNLW_hLpGYtzApn9OQdHtNvOVo5vAd8ka8h8S1QfbUaTMPVevSpO");'></div>
+</div>
+</div>
+<button class="fixed bottom-28 right-4 z-40 flex items-center justify-center size-14 rounded-full bg-gradient-to-tr from-[#0EA5E9] to-[#22D3EE] text-white shadow-xl shadow-cyan-500/20 active:scale-95 transition-transform hover:scale-105 group border border-white/10">
+<span class="material-symbols-outlined text-3xl group-hover:rotate-12 transition-transform">smart_toy</span>
+</button>
+<div class="fixed bottom-6 left-4 right-4 h-16 bg-surface-dark/90 backdrop-blur-lg rounded-2xl flex items-center justify-around shadow-2xl border border-white/5 z-50">
+<button class="flex flex-col items-center justify-center gap-1 w-12 group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform filled" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[10px] font-medium text-white">Anasayfa</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 w-12 group">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-white transition-colors">travel_explore</span>
+</button>
+<button class="flex items-center justify-center -mt-8 size-14 rounded-full bg-primary shadow-[0_0_15px_rgba(127,13,242,0.5)] group active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-white text-3xl">add</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 w-12 group">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-white transition-colors">forum</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 w-12 group">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-white transition-colors">person</span>
+</button>
+</div>
+</div>
+</body></html>

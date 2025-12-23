@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Oyun Detayları - Cyber Legends</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#7f0df2",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#191022",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased selection:bg-primary selection:text-white pb-24">
+<!-- Hero Header / Top App Bar -->
+<div class="relative w-full h-[360px]">
+<!-- Background Image -->
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Futuristic cyberpunk city street with neon lights and gaming atmosphere" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDxGInV_CC-TBenWSXYOqOmSswpYlSLdajr12gitBc4LGpDWG70NBNYdRgkMeNdr6e4OSXzcBomWCq1JPIuO5BEpwChz1c22omLFYPxvVTyo79ujJwZZtN4UBKyrLpDZyA1Jtjs3bPmYgiyeKlmpXsuP-a8GsHILA7ljcrt6zwoSscv6Zq3j1DfE_tffTJneKrl1tB8vXhf9_QfuC3HCAu5VKhXeIpwnhxAmtxmSxBheU7niECACRKTvZV68lhp7CGddtO59EohiGT9');">
+<!-- Gradient Overlay for readability -->
+<div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-background-dark"></div>
+</div>
+<!-- Top Navigation -->
+<div class="absolute top-0 left-0 w-full z-20 flex items-center justify-between p-4 pt-12">
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 backdrop-blur-md text-white hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<div class="flex gap-3">
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 backdrop-blur-md text-white hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 0;">favorite</span>
+</button>
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 backdrop-blur-md text-white hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined text-2xl">share</span>
+</button>
+</div>
+</div>
+<!-- Play Button Overlay -->
+<div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+<button class="pointer-events-auto flex items-center justify-center w-16 h-16 rounded-full bg-primary/90 text-white shadow-[0_0_20px_rgba(127,13,242,0.5)] hover:scale-105 transition-transform backdrop-blur-sm">
+<span class="material-symbols-outlined text-4xl ml-1">play_arrow</span>
+</button>
+</div>
+</div>
+<!-- Main Content Container - Pulls up over the hero image -->
+<div class="relative -mt-8 rounded-t-lg bg-background-light dark:bg-background-dark w-full flex flex-col z-10">
+<!-- Drag Handle / Visual Indicator -->
+<div class="w-full flex justify-center pt-3 pb-1">
+<div class="w-12 h-1 bg-gray-300 dark:bg-white/10 rounded-full"></div>
+</div>
+<!-- Title & Meta Section -->
+<div class="px-5 pt-2 pb-6">
+<div class="flex justify-between items-start">
+<div>
+<h1 class="text-3xl font-bold leading-tight tracking-tight mb-1">Cyber Legends</h1>
+<div class="flex items-center gap-2 text-primary text-sm font-medium">
+<span class="bg-primary/10 px-2 py-0.5 rounded text-xs">RPG</span>
+<span class="bg-primary/10 px-2 py-0.5 rounded text-xs">Aksiyon</span>
+<span class="w-1 h-1 rounded-full bg-gray-400"></span>
+<span class="text-gray-500 dark:text-gray-400">v2.4.0</span>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<div class="flex items-center gap-1 bg-[#261a33] px-2 py-1 rounded-lg border border-white/5">
+<span class="material-symbols-outlined text-yellow-400 text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-white">4.8</span>
+</div>
+<span class="text-[10px] text-gray-500">12b inceleme</span>
+</div>
+</div>
+</div>
+<!-- Story/Media Carousel -->
+<div class="w-full overflow-x-auto pb-6 scrollbar-hide">
+<div class="flex px-5 gap-3 min-w-min">
+<!-- Trailer Item -->
+<div class="flex flex-col gap-2 w-28 shrink-0 group cursor-pointer">
+<div class="relative w-full aspect-square rounded-xl overflow-hidden border border-white/10">
+<div class="absolute inset-0 bg-cover bg-center transition-transform group-hover:scale-110 duration-500" data-alt="Action scene from game showing characters running" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAT5nSOuYrBNut9ZcMpmZOzI_rdyAErHBQKqXhRre7Zj602wktE1Dd6QiKUjMYooUXpy2zRGLr1wzh8luyqOgfWtDduxpgLxQovdK-KmUYVFUKke1uxpo1PyON27QQ-8MaLC4Pilv7gKBqBOGsKCIAQoc0jYM41eeIM7VXtDulp47wgVaBIzbwy3f-MpehF-zeqj6CnTXrrEC7jFta-zAMscB70NT_jFRdFiDoHHPJ4yiS5MRLVe98C7wCtym3cN3rxIobDogUkbL04');"></div>
+<div class="absolute inset-0 bg-black/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-white/80 drop-shadow-md">play_circle</span>
+</div>
+</div>
+<p class="text-xs font-medium text-center text-gray-600 dark:text-gray-300">Oynanış</p>
+</div>
+<!-- Image Item -->
+<div class="flex flex-col gap-2 w-28 shrink-0 group cursor-pointer">
+<div class="relative w-full aspect-square rounded-xl overflow-hidden border border-white/10">
+<div class="absolute inset-0 bg-cover bg-center transition-transform group-hover:scale-110 duration-500" data-alt="Character portrait showing high detail armor" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCnyby3yrXs3MJHIF5eHWchAACrDZhKmqLT4XCo3uq_tndMs-Ntr2f3iZnpOHf9yuN75Uy4SdAfyy6NPM-oP8UIPQEWTmbsa0nfcV4qZzkHbLqmk90q8dQSiRLeb1DJSvVUXtR-HYXW-OU5nkhK3SUlx0e8KOogX7mBh1WzcECkaoaUhoNrEmKRvdYqVrJfY-_xGldJKxn6NKL_zkTiaUOP-zW49qPZ6Pf-5QsxPteH1Gz4X-yIvqJlbp1RradDuaaPz622L2DX_UnE');"></div>
+</div>
+<p class="text-xs font-medium text-center text-gray-600 dark:text-gray-300">Karakterler</p>
+</div>
+<!-- Cinematic Item -->
+<div class="flex flex-col gap-2 w-28 shrink-0 group cursor-pointer">
+<div class="relative w-full aspect-square rounded-xl overflow-hidden border border-white/10">
+<div class="absolute inset-0 bg-cover bg-center transition-transform group-hover:scale-110 duration-500" data-alt="Cinematic wide shot of the game world environment" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCb1gLYSr_TaFuUYcqcezquG0F90SI8rcDKeELF-00tCq9mm6BDn1sjHxC4EMHGDW-PAGffI7iI9zg6bfho11ZE646xm5jjZ-gWUV46-oBwfw0i-IS0azBwMr217r73hhYzoZU90ETc0PCAw77L_wAGAW7ZTbGcp0bcr8e5BlfHSpx0iVnBZtOdDIVjV8TG_GZGfZzcjX9kFu9MOn6RbuJaF5GgUJz7NTDwq1g31IqnHDDHEDnmLed6NO2SI83lz8UtxU8OXeAVk68x');"></div>
+</div>
+<p class="text-xs font-medium text-center text-gray-600 dark:text-gray-300">Sinematik</p>
+</div>
+<!-- More Item -->
+<div class="flex flex-col gap-2 w-28 shrink-0 group cursor-pointer">
+<div class="relative w-full aspect-square rounded-xl overflow-hidden border border-white/10 bg-white/5 flex items-center justify-center">
+<span class="text-primary font-bold text-sm">+12</span>
+</div>
+<p class="text-xs font-medium text-center text-gray-600 dark:text-gray-300">Galeri</p>
+</div>
+</div>
+</div>
+<!-- Sticky Tab Navigation -->
+<div class="sticky top-0 z-30 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-gray-200 dark:border-white/5 px-5">
+<div class="flex items-center gap-6 pt-2 overflow-x-auto scrollbar-hide">
+<button class="relative pb-3 text-primary font-bold text-sm whitespace-nowrap">
+                    Haberler
+                    <span class="absolute bottom-0 left-0 w-full h-[3px] bg-primary rounded-t-full"></span>
+</button>
+<button class="relative pb-3 text-gray-500 dark:text-gray-400 font-medium text-sm whitespace-nowrap hover:text-gray-800 dark:hover:text-white transition-colors">
+                    Hileler &amp; İpuçları
+                </button>
+<button class="relative pb-3 text-gray-500 dark:text-gray-400 font-medium text-sm whitespace-nowrap hover:text-gray-800 dark:hover:text-white transition-colors">
+                    Hakkında
+                </button>
+<button class="relative pb-3 text-gray-500 dark:text-gray-400 font-medium text-sm whitespace-nowrap hover:text-gray-800 dark:hover:text-white transition-colors">
+                    İnceleme
+                </button>
+</div>
+</div>
+<!-- Content Area: News (Active) -->
+<div class="flex flex-col gap-4 p-5 min-h-[400px]">
+<!-- Featured News Card -->
+<div class="group relative overflow-hidden rounded-xl bg-white dark:bg-[#231730] shadow-sm border border-gray-100 dark:border-white/5 cursor-pointer">
+<div class="h-40 w-full bg-cover bg-center" data-alt="Abstract digital glitch art representing a system update" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDTlO4HMtNQNB1c96Z4NjEqlhQIx0wCjhKJFYI4N77YzLI6cO_8dI3YDpSLLzlY3r4sEkZK1h_WlNFGVJFyuNqxYgBRcFJ_zF4gZgL8RURyIJ_Hbc4xuiNSeFWv3GYzi3GJWZypD-MxCmk_BhXq03rxlAAlnqQQdGK6VymiZO3aYso-ZlcJcRKIIB8-bmjlhLywQj_wG569RQJP-Qpu4ouLiaq040t63Xrtgvee6ZuFIScl_R30hXhU3vJhcp29cvvbEoz0SoA3DlaX');">
+<div class="absolute top-3 left-3 bg-primary/90 backdrop-blur text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">
+                        Güncelleme
+                    </div>
+</div>
+<div class="p-4">
+<div class="flex items-center gap-2 mb-2 text-xs text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+<span>2 saat önce</span>
+</div>
+<h3 class="text-base font-bold text-gray-900 dark:text-white mb-2 leading-snug group-hover:text-primary transition-colors">
+                        Yama Notları v2.4: Yeni 'Gece Şehri' Haritası ve Silah Dengelemeleri
+                    </h3>
+<p class="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
+                        Bu güncelleme ile birlikte beklenen gece modu haritası oyuna ekleniyor. Ayrıca keskin nişancı tüfeklerinde önemli değişiklikler yapıldı.
+                    </p>
+</div>
+</div>
+<!-- News List Item -->
+<div class="flex gap-4 p-3 rounded-xl bg-white dark:bg-[#231730] border border-gray-100 dark:border-white/5 cursor-pointer hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+<div class="w-24 h-24 rounded-lg bg-cover bg-center shrink-0" data-alt="Close up of a game controller in dark lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuALm3O43ZaaqCl3H1llma1wqNQDcLunXotP0BNP8yJqP8cDKSHwT-WcAZ644MpE8mPHZXT1Yq6bntIRlGFB89srSAGSlBwg8MG5jeliNmvmxYwJvZKnQIjCfz4GetAW2SJRwjjHV_JvMn1PRDdaoorkzXRQIpgIzHNh279odHaBvz9uyHG9TOZ6PFTJhT_dpfv7i3qs4ENf93mQuQ-y0MBheRE3Lk-gYB6NXh3rhsOiqr8KgvfiT-JCLFD0fTmWmhssjIG9tm_uyqji');"></div>
+<div class="flex flex-col justify-center">
+<div class="flex items-center gap-2 mb-1">
+<span class="text-[10px] font-bold text-primary bg-primary/10 px-1.5 py-0.5 rounded">Etkinlik</span>
+<span class="text-[10px] text-gray-500">Dün</span>
+</div>
+<h3 class="text-sm font-bold text-gray-900 dark:text-white mb-1 leading-snug">Haftasonu Çifte XP Etkinliği Başlıyor</h3>
+<p class="text-xs text-gray-600 dark:text-gray-400 line-clamp-2">Cuma akşamından Pazar gece yarısına kadar tüm modlarda geçerli.</p>
+</div>
+</div>
+<!-- News List Item -->
+<div class="flex gap-4 p-3 rounded-xl bg-white dark:bg-[#231730] border border-gray-100 dark:border-white/5 cursor-pointer hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+<div class="w-24 h-24 rounded-lg bg-cover bg-center shrink-0" data-alt="Close up of a computer screen showing code" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAx7spf3t1ce2OLuKFRamsQK45GcuFs3knEw61ISYJCmjq8FqFCET6xTfXBsIih7iRMPDiiJtbGO07FKHXy8rt5X0iObeF8UBx45IycpBcCrtyVM26HttqAcD2otK4Yft9Hr-QusON49n-2k7PJTVDbCXiX2yOzuGjFn9fSlcaOsmeMJpiRRpLu659XuHVMBtP1t3-7RoSFkkc7jEwI6BCv1Br4TKcv5yMiaDzEBGMbySUZeH3eVEjA2KTToOBnyvXyHWCRFhVGXxwC');"></div>
+<div class="flex flex-col justify-center">
+<div class="flex items-center gap-2 mb-1">
+<span class="text-[10px] font-bold text-orange-500 bg-orange-500/10 px-1.5 py-0.5 rounded">Bakım</span>
+<span class="text-[10px] text-gray-500">2 gün önce</span>
+</div>
+<h3 class="text-sm font-bold text-gray-900 dark:text-white mb-1 leading-snug">Planlı Sunucu Bakımı</h3>
+<p class="text-xs text-gray-600 dark:text-gray-400 line-clamp-2">Sunucular 15 Mayıs 03:00 - 05:00 saatleri arasında kapalı olacaktır.</p>
+</div>
+</div>
+<!-- Divider for Demo purposes -->
+<div class="py-4 flex items-center gap-4">
+<div class="h-px bg-white/10 flex-1"></div>
+<span class="text-xs text-gray-500 uppercase tracking-widest">Hileler Önizleme</span>
+<div class="h-px bg-white/10 flex-1"></div>
+</div>
+<!-- Cheats / Tips Section (Demo of second tab content) -->
+<div class="flex flex-col gap-3">
+<!-- Cheat Item -->
+<div class="rounded-xl bg-white dark:bg-[#231730] border border-gray-100 dark:border-white/5 overflow-hidden">
+<div class="p-4 flex items-center justify-between cursor-pointer hover:bg-white/5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm">vpn_key</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-gray-900 dark:text-white">Tüm Kostümleri Aç</h4>
+<p class="text-xs text-gray-500">Sadece offline modda çalışır</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-gray-400">expand_more</span>
+</div>
+</div>
+<!-- Cheat Item Active State -->
+<div class="rounded-xl bg-white dark:bg-[#231730] border border-primary/30 overflow-hidden ring-1 ring-primary/20">
+<div class="p-4 flex items-center justify-between cursor-pointer border-b border-white/5 bg-primary/5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center text-green-500">
+<span class="material-symbols-outlined text-sm">attach_money</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-gray-900 dark:text-white">Sınırsız Para Glitch</h4>
+<p class="text-xs text-gray-500">v2.3.0 sürümü için test edildi</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary rotate-180">expand_less</span>
+</div>
+<div class="p-4 bg-background-light dark:bg-[#1a1023]">
+<p class="text-sm text-gray-600 dark:text-gray-300 mb-3 leading-relaxed">
+                            Mağazaya gidin ve en pahalı eşyayı seçin. "Satın Al" butonuna basarken aynı anda menü tuşuna basılı tutun.
+                        </p>
+<div class="bg-black/20 rounded p-2 flex items-center justify-between border border-white/5">
+<code class="text-xs text-primary font-mono">UP, UP, DOWN, A, B</code>
+<button class="text-xs text-gray-400 hover:text-white flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+                                Kopyala
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Ratings Summary (Reused Component Structure) -->
+<div class="mt-4 pt-6 pb-2">
+<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4 px-1">Değerlendirmeler</h3>
+<div class="flex flex-wrap gap-x-6 gap-y-4 rounded-2xl bg-white dark:bg-[#231730] p-5 border border-gray-100 dark:border-white/5">
+<div class="flex flex-col items-center justify-center gap-1 min-w-[80px]">
+<p class="text-primary text-5xl font-black leading-none tracking-tight">4.8</p>
+<div class="flex gap-0.5 mt-1">
+<span class="material-symbols-outlined text-primary text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-[16px]" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+<p class="text-gray-500 text-xs mt-1">12b Oy</p>
+</div>
+<div class="grid flex-1 gap-y-2 min-w-[180px]">
+<!-- 5 Star -->
+<div class="grid grid-cols-[12px_1fr_30px] items-center gap-2">
+<span class="text-xs text-gray-500 font-medium">5</span>
+<div class="h-1.5 w-full bg-gray-200 dark:bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 75%"></div>
+</div>
+<span class="text-xs text-gray-400 text-right">75%</span>
+</div>
+<!-- 4 Star -->
+<div class="grid grid-cols-[12px_1fr_30px] items-center gap-2">
+<span class="text-xs text-gray-500 font-medium">4</span>
+<div class="h-1.5 w-full bg-gray-200 dark:bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 15%"></div>
+</div>
+<span class="text-xs text-gray-400 text-right">15%</span>
+</div>
+<!-- 3 Star -->
+<div class="grid grid-cols-[12px_1fr_30px] items-center gap-2">
+<span class="text-xs text-gray-500 font-medium">3</span>
+<div class="h-1.5 w-full bg-gray-200 dark:bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 5%"></div>
+</div>
+<span class="text-xs text-gray-400 text-right">5%</span>
+</div>
+<!-- 2 Star -->
+<div class="grid grid-cols-[12px_1fr_30px] items-center gap-2">
+<span class="text-xs text-gray-500 font-medium">2</span>
+<div class="h-1.5 w-full bg-gray-200 dark:bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 3%"></div>
+</div>
+<span class="text-xs text-gray-400 text-right">3%</span>
+</div>
+<!-- 1 Star -->
+<div class="grid grid-cols-[12px_1fr_30px] items-center gap-2">
+<span class="text-xs text-gray-500 font-medium">1</span>
+<div class="h-1.5 w-full bg-gray-200 dark:bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 2%"></div>
+</div>
+<span class="text-xs text-gray-400 text-right">2%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Bottom CTA -->
+<div class="fixed bottom-0 left-0 w-full p-4 bg-background-light dark:bg-background-dark border-t border-gray-200 dark:border-white/10 z-50">
+<div class="flex gap-3 max-w-md mx-auto">
+<button class="flex-1 bg-primary hover:bg-primary/90 text-white font-bold h-12 rounded-full flex items-center justify-center gap-2 shadow-lg shadow-primary/25 transition-all active:scale-95">
+<span class="material-symbols-outlined">download</span>
+                Oyunu İndir
+            </button>
+<button class="w-12 h-12 rounded-full border border-gray-300 dark:border-white/20 flex items-center justify-center text-gray-600 dark:text-white hover:bg-gray-100 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined">forum</span>
+</button>
+</div>
+</div>
+</body></html>

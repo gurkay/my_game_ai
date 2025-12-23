@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Soru &amp; Cevap Forumu</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#7f0df2",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#191022",
+                        "card-light": "#ffffff",
+                        "card-dark": "#251733",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for clean UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased selection:bg-primary selection:text-white pb-24">
+<!-- Header -->
+<header class="sticky top-0 z-20 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md transition-colors duration-300">
+<div class="flex items-center justify-between px-4 py-4">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 ring-2 ring-primary/20" data-alt="User profile avatar showing a stylized gamer character" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCzO0AR_cGLp6bs0qaYjBZ6szitjDZtrbALleYo6_FxHYGwEggip-6Ns4tOl7lfFTDqJ3baZdJRY02PBRTEazchF4b7n64ujdeQB5jkmAmyaQ6zZ3embdRyy2l6pqGb_6yPiZyF1huWz6YdDMOPeyi7sXfWs3RpgYeGg13HVsjJimKqKNa-iOIhyVQzfeoG4kx230qIjTf9ZUqO9NhUUeCojoK_WQNNf68wr_qFLmp7HhQE9u8m1gTcRXQqxOwkR4GSymv43J4alXj6");'></div>
+<div class="flex flex-col">
+<h1 class="text-xl font-bold leading-tight tracking-tight">Soru &amp; Cevap</h1>
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">Topluluk Forumu</span>
+</div>
+</div>
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-slate-200 dark:hover:bg-white/10 transition-colors text-slate-600 dark:text-white">
+<span class="material-symbols-outlined text-[28px]">notifications</span>
+</button>
+</div>
+</header>
+<!-- Search Bar -->
+<div class="px-4 mb-2">
+<div class="relative flex items-center w-full h-12 rounded-xl focus-within:ring-2 focus-within:ring-primary/50 transition-shadow bg-white dark:bg-card-dark shadow-sm">
+<div class="grid place-items-center h-full w-12 text-slate-400">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="peer h-full w-full outline-none text-sm text-slate-700 dark:text-slate-200 pr-2 bg-transparent placeholder-slate-400 font-medium" id="search" placeholder="Sorularda, oyunlarda veya konularda ara..." type="text"/>
+</div>
+</div>
+<!-- Filter Chips -->
+<div class="w-full overflow-x-auto no-scrollbar py-3 pl-4">
+<div class="flex gap-3 min-w-max pr-4">
+<!-- Active Chip -->
+<button class="flex items-center justify-center h-9 px-5 rounded-full bg-primary text-white shadow-lg shadow-primary/30 transition-transform active:scale-95">
+<span class="text-sm font-semibold whitespace-nowrap">Tümü</span>
+</button>
+<!-- Inactive Chips -->
+<button class="flex items-center justify-center h-9 px-5 rounded-full bg-white dark:bg-card-dark border border-slate-100 dark:border-white/5 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors active:scale-95">
+<span class="text-sm font-medium whitespace-nowrap">Popüler</span>
+</button>
+<button class="flex items-center justify-center h-9 px-5 rounded-full bg-white dark:bg-card-dark border border-slate-100 dark:border-white/5 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors active:scale-95">
+<span class="text-sm font-medium whitespace-nowrap">FPS</span>
+</button>
+<button class="flex items-center justify-center h-9 px-5 rounded-full bg-white dark:bg-card-dark border border-slate-100 dark:border-white/5 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors active:scale-95">
+<span class="text-sm font-medium whitespace-nowrap">RPG</span>
+</button>
+<button class="flex items-center justify-center h-9 px-5 rounded-full bg-white dark:bg-card-dark border border-slate-100 dark:border-white/5 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors active:scale-95">
+<span class="text-sm font-medium whitespace-nowrap">MOBA</span>
+</button>
+<button class="flex items-center justify-center h-9 px-5 rounded-full bg-white dark:bg-card-dark border border-slate-100 dark:border-white/5 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors active:scale-95">
+<span class="text-sm font-medium whitespace-nowrap">Strateji</span>
+</button>
+</div>
+</div>
+<!-- Questions Feed -->
+<main class="flex flex-col gap-4 px-4 pt-2">
+<!-- Question Card 1 -->
+<article class="flex flex-col gap-3 p-5 rounded-xl bg-white dark:bg-card-dark shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+<!-- Card Header -->
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-8" data-alt="Avatar of user AhmetK" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC4BMLOz4RCI7XnlSaAx-59VkTDlYKuTZ0D1C-wb8xbvMbFUkjH769YW3kTnoFWEoTX7xV2F53JJzwjBDbVszC32eUba8ZybJU_f9BVksoPNxNtvpfrTadqTXsAgAhO_KusKWShrQ1Yd-RP01klpVjDDvaOuH4zdTrvp9HBZcNKoE-sbZu3Q_lBmUHj1ycwwn7cEygcmQSzBwubo_wS8LZF5o3mOnwFBhgc_kBe8r1AF0-lXJgB3cfOfAZM-mxSD4lIfRdQBtdsfQxi");'></div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-slate-900 dark:text-white">AhmetK</span>
+<span class="text-[11px] text-slate-500 dark:text-slate-400">2 saat önce</span>
+</div>
+</div>
+<div class="px-2.5 py-1 rounded-lg bg-emerald-100 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 text-[10px] font-bold tracking-wide uppercase">
+                    Çözüldü
+                </div>
+</div>
+<!-- Card Body -->
+<div>
+<h3 class="text-lg font-bold leading-snug mb-1 text-slate-800 dark:text-white">Clash Royale'de şu anki meta için en iyi deste hangisi?</h3>
+<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-2">
+                    Arena 15'te takılı kaldım. Özellikle Binici veya Elit Barbar destesi önerisi olan var mı? Karşıma sürekli Mega Şövalye çıkıyor.
+                </p>
+</div>
+<!-- Card Footer -->
+<div class="flex items-center justify-between mt-1 pt-3 border-t border-slate-100 dark:border-white/5">
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-white/5 text-xs font-medium text-slate-600 dark:text-slate-400">Strateji</span>
+</div>
+<div class="flex items-center gap-4 text-slate-500 dark:text-slate-400">
+<div class="flex items-center gap-1.5 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+<span class="text-xs font-medium">12</span>
+</div>
+<div class="flex items-center gap-1.5 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">thumb_up</span>
+<span class="text-xs font-medium">45</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Question Card 2 -->
+<article class="flex flex-col gap-3 p-5 rounded-xl bg-white dark:bg-card-dark shadow-sm hover:shadow-md transition-shadow cursor-pointer border border-primary/30 dark:border-primary/20 relative overflow-hidden">
+<!-- Active highlight effect -->
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+<!-- Card Header -->
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-8" data-alt="Avatar of user GamerGirl99" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCu6EGoH6-vgxH9RheQaf2bjNnyCNUYsBmnu7QtzzAlMVV0fH1VYvfoJysqYEIXGhwwqR-iuUzQ-nUMyVhp88eiT8ZvZ5cra73oZPrO783mV3OGosxPyPtIQN84UpYU8w0OFPR3Wo4vAYd9lBBYVwiJZ1RELgkpQTqDYlF1qo0nJCE-_xZhOIAf8jwgAeuGsnLa0jDBuqG7lrwDDQdamutRne7qe4BRkpNRLp6YSV6Djd3ddFPVbWr9oxCFn-kRNyn9uO9aYWICdQAN");'></div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-slate-900 dark:text-white">GamerGirl99</span>
+<span class="text-[11px] text-slate-500 dark:text-slate-400">15 dk önce</span>
+</div>
+</div>
+</div>
+<!-- Card Body -->
+<div>
+<h3 class="text-lg font-bold leading-snug mb-1 text-slate-800 dark:text-white">PUBG Mobile yeni güncelleme hatası</h3>
+<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-2">
+                    Oyunu güncelledikten sonra lobiye girerken siyah ekranda kalıyor, ses var ama görüntü yok. Çözümünü bilen var mı?
+                </p>
+</div>
+<!-- Card Footer -->
+<div class="flex items-center justify-between mt-1 pt-3 border-t border-slate-100 dark:border-white/5">
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-white/5 text-xs font-medium text-slate-600 dark:text-slate-400">Battle Royale</span>
+</div>
+<div class="flex items-center gap-4 text-slate-500 dark:text-slate-400">
+<div class="flex items-center gap-1.5 hover:text-primary transition-colors text-primary font-semibold">
+<span class="material-symbols-outlined text-[20px] fill-1">chat_bubble</span>
+<span class="text-xs">0</span>
+</div>
+<div class="flex items-center gap-1.5 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">thumb_up</span>
+<span class="text-xs font-medium">2</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Question Card 3 -->
+<article class="flex flex-col gap-3 p-5 rounded-xl bg-white dark:bg-card-dark shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+<!-- Card Header -->
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-8" data-alt="Avatar of user TeknoCan" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBGHYphAr5AEqjvwgX41dMwSLKtdwhAOH6JM5LD2sT0UhxuMIVTM2BSmEna7JNxkQnYh1LJSVHGdgZnkKMDT_kSVtcZ8PooDRGSbfIWFZDeFRCCLnNNxAePB5xSaL1dHHQfIUy2geYqqIYgrY8K0fjnj_tV5-RdKUTn6ntCgIyOQjSHbShfZxSBJunExy5QqrVZEXEHhueSMmjPvNCbpnXBNkvWRuR2QttYMS5AKFk6mZ6oGoVKojLT_KJiOKAj8ybkuGg6bvsT6nL1");'></div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-slate-900 dark:text-white">TeknoCan</span>
+<span class="text-[11px] text-slate-500 dark:text-slate-400">5 saat önce</span>
+</div>
+</div>
+</div>
+<!-- Card Body -->
+<div>
+<h3 class="text-lg font-bold leading-snug mb-1 text-slate-800 dark:text-white">Wild Rift: Yeni şampiyon ne zaman geliyor?</h3>
+<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-2">
+                    Riot son yama notlarında bir ipucu vermişti ama kesin tarih belli mi?
+                </p>
+</div>
+<!-- Card Footer -->
+<div class="flex items-center justify-between mt-1 pt-3 border-t border-slate-100 dark:border-white/5">
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-white/5 text-xs font-medium text-slate-600 dark:text-slate-400">MOBA</span>
+</div>
+<div class="flex items-center gap-4 text-slate-500 dark:text-slate-400">
+<div class="flex items-center gap-1.5 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+<span class="text-xs font-medium">8</span>
+</div>
+<div class="flex items-center gap-1.5 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">thumb_up</span>
+<span class="text-xs font-medium">21</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Question Card 4 -->
+<article class="flex flex-col gap-3 p-5 rounded-xl bg-white dark:bg-card-dark shadow-sm hover:shadow-md transition-shadow cursor-pointer mb-20">
+<!-- Card Header -->
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-8" data-alt="Avatar of user SpeedRacer" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDjix-8biY58IcKHh4iJO4G52gFvg0KdC-WT8dDSRzlUr3RszGZ3LUCLWp1M6V0qPCDbsskCXljM4gzOYWxYTtHRdTBN_jmVJHVOw-QupyLDHywI-dRMRB2reJqWWZ1tUMNK4F2kPTxlVTc_BMj5Dwt5NGlsB-kP2qjwZuFRHeNylPYd4Xtg11B4psUm6OD7PzmeKzkwZeY84aK6In0X4UrvXOdB4tR20eqTp3C2FwONVycRgSMOpWiPqc1m83vzJulwUHmx7G0xQ__");'></div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-slate-900 dark:text-white">SpeedRacer</span>
+<span class="text-[11px] text-slate-500 dark:text-slate-400">1 gün önce</span>
+</div>
+</div>
+</div>
+<!-- Card Body -->
+<div>
+<h3 class="text-lg font-bold leading-snug mb-1 text-slate-800 dark:text-white">Genshin Impact 60 FPS ayarları</h3>
+<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-2">
+                    iPhone 13'te ısınma yapmadan 60 FPS oynamak mümkün mü? Hangi grafik ayarlarını kısmalıyım?
+                </p>
+</div>
+<!-- Card Footer -->
+<div class="flex items-center justify-between mt-1 pt-3 border-t border-slate-100 dark:border-white/5">
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-white/5 text-xs font-medium text-slate-600 dark:text-slate-400">RPG</span>
+</div>
+<div class="flex items-center gap-4 text-slate-500 dark:text-slate-400">
+<div class="flex items-center gap-1.5 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+<span class="text-xs font-medium">34</span>
+</div>
+<div class="flex items-center gap-1.5 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">thumb_up</span>
+<span class="text-xs font-medium">156</span>
+</div>
+</div>
+</div>
+</article>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-24 right-5 z-40 flex items-center justify-center size-14 rounded-full bg-primary text-white shadow-lg shadow-primary/40 hover:scale-105 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[32px]">add</span>
+</button>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 z-50 w-full bg-white/90 dark:bg-[#1f122b]/95 backdrop-blur-lg border-t border-slate-200 dark:border-white/5 pb-5 pt-3 px-6">
+<ul class="flex justify-between items-center">
+<li class="flex-1">
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">newspaper</span>
+<span class="text-[10px] font-medium">Haberler</span>
+</a>
+</li>
+<li class="flex-1">
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">system_update</span>
+<span class="text-[10px] font-medium">Güncellemeler</span>
+</a>
+</li>
+<li class="flex-1">
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">terminal</span>
+<span class="text-[10px] font-medium">Hileler</span>
+</a>
+</li>
+<li class="flex-1">
+<a class="flex flex-col items-center gap-1 text-primary dark:text-primary transition-colors relative" href="#">
+<!-- Active Indicator dot -->
+<span class="absolute -top-1 size-1 bg-primary rounded-full"></span>
+<span class="material-symbols-outlined text-[24px] fill-1">forum</span>
+<span class="text-[10px] font-bold">Forum</span>
+</a>
+</li>
+</ul>
+</nav>
+</body></html>

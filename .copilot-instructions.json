@@ -1,0 +1,169 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "CleanCodeManifest",
+    "description": "Manifesto for writing clean, modern and maintainable code.",
+    "version": 1,
+    "language": "Dart/Flutter",
+    "principles": [
+        {
+            "id": "CCM-001",
+            "name": "WriteCleanModernMaintainableCode",
+            "summary": "Produce code that is clean, modern, and easy to maintain.",
+            "description": "Prefer small, focused widgets and classes; keep cyclomatic complexity low; adopt latest stable Dart features and Flutter best practices.",
+            "tags": [
+                "clean",
+                "modern",
+                "maintainability"
+            ],
+            "examples": [
+                "Use late keyword for non-nullable variables initialized later instead of nullable types with !.",
+                "Prefer const constructors for immutable widgets to improve performance.",
+                "Extract complex widget trees into separate StatelessWidget or StatefulWidget classes."
+            ]
+        },
+        {
+            "id": "CCM-002",
+            "name": "InlineCommentsForComplexLogic",
+            "summary": "Add inline comments only where the intent is not obvious from the code itself.",
+            "description": "Comments should explain 'why', not 'what'. Avoid redundant statements.",
+            "tags": [
+                "comments",
+                "readability"
+            ],
+            "examples": [
+                "// Using Fisher-Yates shuffle to avoid bias\nfor (var i = list.length - 1; i > 0; i--) { ... }",
+                "// Debounce search to reduce API calls\nawait Future.delayed(const Duration(milliseconds: 300));"
+            ]
+        },
+        {
+            "id": "CCM-003",
+            "name": "MeaningfulNames",
+            "summary": "Variables, functions, classes and files must reveal intention without additional context.",
+            "description": "Follow Dart naming conventions: lowerCamelCase for variables/functions, UpperCamelCase for classes. Avoid abbreviations or generic names (data, temp, foo).",
+            "tags": [
+                "naming",
+                "readability"
+            ],
+            "examples": [
+                "final elapsedMs = DateTime.now().millisecondsSinceEpoch - startMs;",
+                "double calculateTotalPrice(List<CartItem> items) { ... }",
+                "class UserProfileWidget extends StatelessWidget { ... }"
+            ]
+        },
+        {
+            "id": "CCM-004",
+            "name": "DartFlutterBestPractices",
+            "summary": "Follow idiomatic Dart/Flutter patterns and enable strict analysis options.",
+            "description": "Use null-safety properly, prefer const constructors, avoid dynamic type, use records and patterns (Dart 3.0+), follow effective Dart guidelines.",
+            "tags": [
+                "dart",
+                "flutter",
+                "typesafety"
+            ],
+            "examples": [
+                "Use String? for nullable strings instead of String with null checks.",
+                "Prefer final for immutable variables: final userId = user.id;",
+                "Use const for compile-time constants: const EdgeInsets.all(16.0)",
+                "Leverage pattern matching: if (response case Success(:final data)) { ... }",
+                "Use records for multiple return values: (String, int) getUserInfo() => (name, age);"
+            ]
+        },
+        {
+            "id": "CCM-005",
+            "name": "DRY",
+            "summary": "Do not repeat yourself; consolidate duplicated logic into reusable abstractions.",
+            "description": "Identify duplication and extract shared widgets, mixins, extensions, or utility classes.",
+            "tags": [
+                "dry",
+                "reuse"
+            ],
+            "examples": [
+                "Extract common widget patterns into reusable custom widgets.",
+                "Create extension methods for repeated operations: extension StringX on String { ... }",
+                "Use mixins for shared behavior across multiple classes.",
+                "Extract common API call logic into a base repository or service class."
+            ]
+        },
+        {
+            "id": "CCM-006",
+            "name": "SOLID",
+            "summary": "Apply SOLID principles to achieve flexible and scalable architectures.",
+            "description": "Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion. Use proper state management and architecture patterns.",
+            "tags": [
+                "solid",
+                "architecture"
+            ],
+            "examples": [
+                "Use dependency injection with get_it or provider for loose coupling.",
+                "Separate business logic from UI using BLoC, Provider, Riverpod, or similar patterns.",
+                "Create abstract classes for interfaces: abstract class NewsRepository { ... }",
+                "Keep widgets focused on UI only; move logic to controllers, view models, or BLoCs."
+            ]
+        },
+        {
+            "id": "CCM-007",
+            "name": "Documentation",
+            "summary": "Document every public function, class, widget and generic type parameter.",
+            "description": "Use dartdoc comments (///) for public APIs; include purpose, parameters, return values, and possible exceptions.",
+            "tags": [
+                "docs",
+                "api"
+            ],
+            "examples": [
+                "/// Calculates compound interest.\n///\n/// [principal] Initial amount in cents.\n/// [rate] Annual rate (0.01 = 1%).\n///\n/// Returns the accrued amount in cents.\n///\n/// Throws [RangeError] if rate is negative.\ndouble compound(double principal, double rate) { ... }",
+                "/// A custom button widget with loading state.\n///\n/// The [onPressed] callback is called when the button is tapped.\n/// Shows a loading indicator when [isLoading] is true.\nclass CustomButton extends StatelessWidget { ... }"
+            ]
+        },
+        {
+            "id": "CCM-008",
+            "name": "ModernSyntaxAndPatterns",
+            "summary": "Adopt contemporary Dart/Flutter features and established design patterns.",
+            "description": "Use async/await, null-safety operators, spread operators, collection-if, records, patterns, sealed classes (Dart 3.0+).",
+            "tags": [
+                "modern",
+                "syntax"
+            ],
+            "examples": [
+                "Use null-aware operators: final theme = data?.profile?.settings?.theme ?? 'light';",
+                "Use spread operator in collections: [...oldItems, newItem]",
+                "Use collection-if: [if (isLoggedIn) ProfileIcon()]",
+                "Use async/await: final user = await userRepository.getUser(id);",
+                "Use records: final (name, age) = getUserInfo();",
+                "Use sealed classes for exhaustive pattern matching."
+            ]
+        },
+        {
+            "id": "CCM-009",
+            "name": "ReadabilityOverCleverness",
+            "summary": "Favor straightforward, self-evident solutions over terse or ‘clever’ code.",
+            "description": "Avoid deeply nested ternaries or complex one-liners. Prefer explicit conditionals and clear widget trees.",
+            "tags": [
+                "readability",
+                "cleverness"
+            ],
+            "examples": [
+                "Prefer explicit if/else blocks over multi-level ternary operators.",
+                "Break complex widget trees into smaller, named widgets.",
+                "Use meaningful variable names even for short-lived variables.",
+                "Prefer clear method chains over single complex expressions."
+            ]
+        },
+        {
+            "id": "CCM-010",
+            "name": "FlutterPerformance",
+            "summary": "Write performant Flutter code to ensure smooth UI and optimal resource usage.",
+            "description": "Use const constructors, avoid rebuilds with proper keys, use ListView.builder for long lists, optimize images, use proper state management.",
+            "tags": [
+                "flutter",
+                "performance"
+            ],
+            "examples": [
+                "Use const for widgets that don't change: const Text('Hello')",
+                "Use ListView.builder instead of ListView for long lists.",
+                "Provide keys to widgets in lists: key: ValueKey(item.id)",
+                "Cache expensive computations and avoid rebuilding unchanged widgets.",
+                "Use RepaintBoundary for complex widgets that don't change often."
+            ]
+        }
+    ]
+}
