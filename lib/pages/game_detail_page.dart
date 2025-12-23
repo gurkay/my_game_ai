@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import '../core/theme/app_colors.dart';
 import '../data/mock_game_data.dart';
+import '../data/mock_system_requirements_data.dart';
 import '../models/game.dart';
 import '../widgets/cheat_card.dart';
 import '../widgets/game_update_card.dart';
 import '../widgets/media_carousel_item.dart';
 import '../widgets/rating_statistics_card.dart';
+import 'system_requirements_page.dart';
 
 /// The game detail page displaying comprehensive game information.
 ///
@@ -495,6 +497,58 @@ class _GameDetailPageState extends State<GameDetailPage>
                   : AppColors.textSecondary,
               fontSize: 14,
               height: 1.6,
+            ),
+          ),
+          const SizedBox(height: 24),
+          // System Requirements Button
+          SizedBox(
+            width: double.infinity,
+            child: OutlinedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SystemRequirementsPage(
+                      requirements: pubgSystemRequirements,
+                    ),
+                  ),
+                );
+              },
+              style: OutlinedButton.styleFrom(
+                padding: const EdgeInsets.symmetric(vertical: 16),
+                side: BorderSide(
+                  color: AppColors.primary.withOpacity(0.3),
+                  width: 1.5,
+                ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.settings_system_daydream,
+                    color: AppColors.primary,
+                    size: 20,
+                  ),
+                  const SizedBox(width: 8),
+                  const Text(
+                    'Sistem Gereksinimleri',
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600,
+                      color: AppColors.primary,
+                    ),
+                  ),
+                  const SizedBox(width: 4),
+                  Icon(
+                    Icons.arrow_forward_ios,
+                    color: AppColors.primary,
+                    size: 14,
+                  ),
+                ],
+              ),
             ),
           ),
           const SizedBox(height: 16),
