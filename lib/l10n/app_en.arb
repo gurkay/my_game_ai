@@ -1,0 +1,183 @@
+{
+  "@@locale": "en",
+  "appTitle": "My Game AI",
+  "@appTitle": {
+    "description": "Application title"
+  },
+  "home": "Home",
+  "@home": {
+    "description": "Home navigation label"
+  },
+  "explore": "Explore",
+  "@explore": {
+    "description": "Explore navigation label"
+  },
+  "library": "Library",
+  "@library": {
+    "description": "Library navigation label"
+  },
+  "profile": "Profile",
+  "@profile": {
+    "description": "Profile navigation label"
+  },
+  "news": "News",
+  "@news": {
+    "description": "News section label"
+  },
+  "allNews": "ALL NEWS",
+  "@allNews": {
+    "description": "All news button"
+  },
+  "gameDetails": "Game Details",
+  "@gameDetails": {
+    "description": "Game details page title"
+  },
+  "systemRequirements": "System Requirements",
+  "@systemRequirements": {
+    "description": "System requirements page title"
+  },
+  "minimum": "Minimum",
+  "@minimum": {
+    "description": "Minimum requirements tab"
+  },
+  "recommended": "Recommended",
+  "@recommended": {
+    "description": "Recommended requirements tab"
+  },
+  "deviceCompatibility": "Device Compatibility",
+  "@deviceCompatibility": {
+    "description": "Device compatibility section"
+  },
+  "performance": "Performance",
+  "@performance": {
+    "description": "Performance section"
+  },
+  "forum": "Forum",
+  "@forum": {
+    "description": "Forum page title"
+  },
+  "askQuestion": "ASK QUESTION",
+  "@askQuestion": {
+    "description": "Ask question button"
+  },
+  "searchQuestions": "Search questions...",
+  "@searchQuestions": {
+    "description": "Search placeholder"
+  },
+  "all": "All",
+  "@all": {
+    "description": "All filter"
+  },
+  "cheats": "Cheats",
+  "@cheats": {
+    "description": "Cheats page title"
+  },
+  "searchCheats": "Search cheats, codes, guides...",
+  "@searchCheats": {
+    "description": "Search cheats placeholder"
+  },
+  "popularGames": "Popular Games",
+  "@popularGames": {
+    "description": "Popular games section"
+  },
+  "aiAssistant": "AI Assistant",
+  "@aiAssistant": {
+    "description": "AI assistant title"
+  },
+  "aiDescription": "Can't find the cheat you're looking for? Try our AI assistant!",
+  "@aiDescription": {
+    "description": "AI assistant description"
+  },
+  "tryAI": "TRY AI",
+  "@tryAI": {
+    "description": "Try AI button"
+  },
+  "cheatDetail": "Cheat Detail",
+  "@cheatDetail": {
+    "description": "Cheat detail page title"
+  },
+  "cheatCode": "CHEAT CODE",
+  "@cheatCode": {
+    "description": "Cheat code label"
+  },
+  "copyCode": "Copy Code",
+  "@copyCode": {
+    "description": "Copy code button"
+  },
+  "codeCopied": "Code copied!",
+  "@codeCopied": {
+    "description": "Code copied message"
+  },
+  "description": "Description",
+  "@description": {
+    "description": "Description section"
+  },
+  "howToUse": "How to Use?",
+  "@howToUse": {
+    "description": "How to use section"
+  },
+  "gameplayVideo": "Gameplay Video",
+  "@gameplayVideo": {
+    "description": "Gameplay video section"
+  },
+  "comments": "Comments",
+  "@comments": {
+    "description": "Comments section"
+  },
+  "viewAll": "VIEW ALL",
+  "@viewAll": {
+    "description": "View all button"
+  },
+  "writeComment": "Write a comment...",
+  "@writeComment": {
+    "description": "Write comment placeholder"
+  },
+  "reply": "Reply",
+  "@reply": {
+    "description": "Reply button"
+  },
+  "myProfile": "My Profile",
+  "@myProfile": {
+    "description": "My profile title"
+  },
+  "editProfile": "EDIT PROFILE",
+  "@editProfile": {
+    "description": "Edit profile button"
+  },
+  "stats": "Stats",
+  "@stats": {
+    "description": "Stats tab"
+  },
+  "achievements": "Achievements",
+  "@achievements": {
+    "description": "Achievements tab"
+  },
+  "favoriteGames": "Favorite Games",
+  "@favoriteGames": {
+    "description": "Favorite games section"
+  },
+  "addGame": "Add Game",
+  "@addGame": {
+    "description": "Add game button"
+  },
+  "settings": "Settings",
+  "@settings": {
+    "description": "Settings label"
+  },
+  "language": "Language",
+  "@language": {
+    "description": "Language setting"
+  },
+  "turkish": "Turkish",
+  "@turkish": {
+    "description": "Turkish language"
+  },
+  "english": "English",
+  "@english": {
+    "description": "English language"
+  },
+  "selectLanguage": "Select Language",
+  "@selectLanguage": {
+    "description": "Select language dialog title"
+  }
+}

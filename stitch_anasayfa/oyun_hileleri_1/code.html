@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Oyun Hileleri - Hile Kütüphanesi</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#7f0df2",
+                        "primary-dark": "#600ab8",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#191022",
+                        "surface-dark": "#231530",
+                        "surface-light": "#ffffff",
+                        "text-secondary": "#ad90cb",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Spline Sans", "Noto Sans", sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white overflow-x-hidden pb-24">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-30 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-200 dark:border-white/5">
+<div class="flex items-center p-4 pb-2 justify-between">
+<h2 class="text-2xl font-bold leading-tight tracking-[-0.015em] flex-1 text-slate-900 dark:text-white">Hile Kütüphanesi</h2>
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-primary" style="font-size: 28px;">tune</span>
+</button>
+</div>
+</div>
+<!-- Search Bar -->
+<div class="px-4 py-3">
+<label class="flex flex-col w-full">
+<div class="flex w-full items-stretch rounded-xl h-12 shadow-sm">
+<div class="text-text-secondary flex bg-surface-light dark:bg-surface-dark items-center justify-center pl-4 rounded-l-xl border-r-0">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-surface-light dark:bg-surface-dark placeholder:text-text-secondary px-4 rounded-l-none pl-2 text-base font-normal leading-normal transition-all" placeholder="Oyun veya hile ara..."/>
+</div>
+</label>
+</div>
+<!-- Category Chips -->
+<div class="flex gap-3 px-4 py-2 overflow-x-auto no-scrollbar">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary pl-5 pr-5 shadow-lg shadow-primary/20 active:scale-95 transition-transform">
+<p class="text-white text-sm font-semibold leading-normal">Tümü</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-white/5 pl-5 pr-5 active:scale-95 transition-transform">
+<p class="text-slate-600 dark:text-white text-sm font-medium leading-normal">Popüler</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-white/5 pl-5 pr-5 active:scale-95 transition-transform">
+<p class="text-slate-600 dark:text-white text-sm font-medium leading-normal">FPS</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-white/5 pl-5 pr-5 active:scale-95 transition-transform">
+<p class="text-slate-600 dark:text-white text-sm font-medium leading-normal">RPG</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-white/5 pl-5 pr-5 active:scale-95 transition-transform">
+<p class="text-slate-600 dark:text-white text-sm font-medium leading-normal">Strateji</p>
+</button>
+</div>
+<!-- Story Carousel (Popular Games) -->
+<div class="mt-4">
+<div class="px-4 pb-2 flex justify-between items-end">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight">Öne Çıkan Oyunlar</h3>
+<button class="text-primary text-xs font-bold uppercase tracking-wider">Tümünü Gör</button>
+</div>
+<div class="flex w-full overflow-x-auto no-scrollbar px-4 py-3 gap-5">
+<div class="flex flex-col items-center gap-2 min-w-[64px] group cursor-pointer">
+<div class="w-16 h-16 rounded-full p-[2px] bg-gradient-to-tr from-primary to-blue-500">
+<div class="w-full h-full rounded-full border-2 border-background-light dark:border-background-dark overflow-hidden bg-gray-800">
+<img alt="Esports gaming character closeup" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGMI9G-pC1Ws1YNIVxf6CRpAki6TSTvzDTK_YyYm1paUxlXMQKm6ngzMvVN7O3LUUpG8z2hGgQY_fY28P4Iq3vXTenVNg8b-YJKBFLvJJdUCHG92L1RHA7lqcfNrsRt2HusVfFx-TIYqLkw4FP47aaEHyyJC-B53HkYjxkd6oX4eXXERfaAgAhVEB494QpktOK4vAkrqXEkj39KEN85zeWlkhj8Z9De69rUQfFQ7VmW2JgL6smiAXUqX9CLT_dcmVl2qemN6DX6Oip"/>
+</div>
+</div>
+<p class="text-slate-600 dark:text-white text-[11px] font-medium text-center">PUBG M</p>
+</div>
+<div class="flex flex-col items-center gap-2 min-w-[64px] group cursor-pointer">
+<div class="w-16 h-16 rounded-full p-[2px] bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-white/10">
+<div class="w-full h-full rounded-full overflow-hidden bg-gray-800">
+<img alt="Blocky 3d character face" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvmqaYTkES7_rQg5KVUaGFcv56BajkdvscstwSWlrqMqNi8UwTFz1R5ZQ0Nva1el9hReuFEclt_DTxmxE4oBQ7FpKpw9EzmpSCKFzr8dRsuSeY4rGCB49ua-8lVQQkQedu4Tzv0TdbmOnW420RcTYmTafpVlRYXLd7hpfA0iubtl6M_SttI9AC_Zo_CZ2XU2aDhW8E-UTTbkPwg2I5quG3FynNV4LyfJ9GDKHPrbyTQOIZDF9oIWZUpr7pZpYwn2i7cc82NzLIe7_g"/>
+</div>
+</div>
+<p class="text-slate-600 dark:text-white text-[11px] font-medium text-center">Roblox</p>
+</div>
+<div class="flex flex-col items-center gap-2 min-w-[64px] group cursor-pointer">
+<div class="w-16 h-16 rounded-full p-[2px] bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-white/10">
+<div class="w-full h-full rounded-full overflow-hidden bg-gray-800">
+<img alt="Generic fantasy shield icon" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAATc1rqySA571v8ikAifudLsUSe1r_zPRAYITiDwv0T8c61fGcK4WBjIALMNB0RIROLVnq9jlpdbJgVoA_Ua8Q97L6LFA7TBWpWK-DHbOw5ZXikhp7Cj8ZfgA_l30gE6byvwkOjxPZen-4s-GA7uk3_LpYrY-09_7wPXwEl6DHVDCemR5MIAi8VrgHiFB_2l23qUC6r_eGCwexe88fJf_Jh2merICxxKcknIzGPoavJyIqC48hKbPwxDGyzFMb4sz53GmS_W8bJTFV"/>
+</div>
+</div>
+<p class="text-slate-600 dark:text-white text-[11px] font-medium text-center">Clash</p>
+</div>
+<div class="flex flex-col items-center gap-2 min-w-[64px] group cursor-pointer">
+<div class="w-16 h-16 rounded-full p-[2px] bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-white/10">
+<div class="w-full h-full rounded-full overflow-hidden bg-gray-800">
+<img alt="Pixel art grass block" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYZm1AR3VKuyvoiRhO2fvUh4OPIs9d1eTShv4pNaR-Npu8xMeWZ8UhLDHmAfVr-wp6mZepQfMb6un6cfWsqV_QFzC6ucvE9BHEWACgShrtmgwlsB92s3S7R3SP7XlWlYjU7rUpShgCSrvx5ADcHteae3PWmseJoPaXlMaRUjuc_AuB_JC9P5QK75JBaRxVAEAsAWT8W2KvQ_nYE6r7f0uKBos8AnFArCs9oUmd9ICM1MIp0oppFOLysaAw3EYeoS6NzyXLhMdoQjKX"/>
+</div>
+</div>
+<p class="text-slate-600 dark:text-white text-[11px] font-medium text-center">Minecraft</p>
+</div>
+<div class="flex flex-col items-center gap-2 min-w-[64px] group cursor-pointer">
+<div class="w-16 h-16 rounded-full p-[2px] bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-white/10">
+<div class="w-full h-full rounded-full overflow-hidden bg-gray-800">
+<img alt="Retro game controller icon" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyS8vj-VHptbi_rSnwB4JQwGh5LtejWxIaDtWq9isNVIx8yJYIIDn6Dnzizz7-TY_O0kWqxG35WRNtOcVZqawD03FVkeB8txqBCzKewYvDetWPAMX_vdbQ2Z9TAHmdbTMN8it5yLDliFL5JxUIa99ivNBtSwQoDlYKXzVVGin1EEdBbrjy7pCRX3CT92JX2Gxg9xer28Jj18IQqu6Amu5qY5DJ4he-z49WHg6ZPe2IyP-ie5dJu-HIOzSPDHtNyJLhUNAxv_1DN_C0"/>
+</div>
+</div>
+<p class="text-slate-600 dark:text-white text-[11px] font-medium text-center">Diğer</p>
+</div>
+</div>
+</div>
+<!-- AI Promo Banner -->
+<div class="px-4 mt-2 mb-6">
+<div class="relative w-full overflow-hidden rounded-2xl bg-gradient-to-r from-[#6b21a8] to-[#4c1d95] shadow-lg shadow-primary/20">
+<div class="absolute right-0 top-0 h-full w-1/2 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+<div class="relative flex items-center justify-between p-5">
+<div class="flex flex-col gap-1 pr-4">
+<h4 class="text-white font-bold text-lg leading-tight">Hileyi bulamadın mı?</h4>
+<p class="text-purple-200 text-xs font-medium">Yapay zeka asistanımız senin için bulsun.</p>
+</div>
+<button class="shrink-0 w-10 h-10 bg-white text-primary rounded-full flex items-center justify-center shadow-lg active:scale-90 transition-transform">
+<span class="material-symbols-outlined filled">smart_toy</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Cheats List -->
+<div class="px-4 flex flex-col gap-4">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight">Son Eklenenler</h3>
+<!-- Card 1: Copy Code -->
+<div class="bg-white dark:bg-surface-dark rounded-xl p-4 shadow-sm border border-gray-100 dark:border-white/5 flex flex-col gap-3">
+<div class="flex items-start gap-3">
+<img class="w-12 h-12 rounded-lg object-cover shadow-sm bg-gray-800" data-alt="Grand Theft Auto abstract city blur" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzdQuWWWuoafETL43RzdsiUk5up-oLHGFCew0JH_hTghAGWf20xW-GpblUe_o4oWUjO9mrTKen-pUp8Y78hcVAOnKAt0xtmK85P04_lDfl3OBmK-uKWAmct6BJPZ0LZzHVHY5tkl4tYBaWqnV9CGuKpB00jnJdnihAcvwfsab8Rrfl0yqXk58T7lmkvubnBPjnBGq2wIoyvUmS1Zw8LUa3L794wOThOu8Tk_J821F5XXWIVDqCi10bfpse5U31aenalunlH613y0ke"/>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h4 class="text-slate-900 dark:text-white font-bold text-base truncate">GTA V</h4>
+<span class="bg-green-500/10 text-green-600 dark:text-green-400 text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wide">Çalışıyor</span>
+</div>
+<p class="text-text-secondary text-xs mt-0.5 truncate">Ölümsüzlük Modu (5 Dakika)</p>
+</div>
+</div>
+<div class="bg-gray-50 dark:bg-[#191022] rounded-lg p-3 flex justify-between items-center border border-gray-200 dark:border-white/5 group active:bg-gray-100 dark:active:bg-[#20152b] transition-colors cursor-pointer">
+<div class="flex flex-col">
+<span class="text-[10px] text-text-secondary uppercase font-bold tracking-wider mb-1">PlayStation</span>
+<code class="text-primary font-mono text-sm font-semibold tracking-wide">RIGHT, X, RIGHT, LEFT, RIGHT, R1</code>
+</div>
+<span class="material-symbols-outlined text-text-secondary group-hover:text-primary transition-colors text-xl">content_copy</span>
+</div>
+</div>
+<!-- Card 2: Copy Command -->
+<div class="bg-white dark:bg-surface-dark rounded-xl p-4 shadow-sm border border-gray-100 dark:border-white/5 flex flex-col gap-3">
+<div class="flex items-start gap-3">
+<img class="w-12 h-12 rounded-lg object-cover shadow-sm bg-gray-800" data-alt="Pixelated sword icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfYKGz9UTW6O1Jz38oa3MsKknD7_TSHCHx5QTl8Nju1bIN8oiyF215oLG-6cfs3nMQsOqEBLyTD797iC_W5mr0vAFDn_x4kZ-Uwg8ORk0D8tiuU8btOe8LJvN5R3w6AKU6eCa2nFqjAWDIz-pOEh49MwNrk7hjC0ZQmHKjMWOy9vfX_lNoskEL0Nlcp7cO5vlmeyIusHqsKg_x9YyKlUDundH_LiMqefwNhmPItofyp4K0hvFxR1lMLIu9obytBcliqL7eh9rXhTYT"/>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h4 class="text-slate-900 dark:text-white font-bold text-base truncate">Minecraft</h4>
+<span class="bg-green-500/10 text-green-600 dark:text-green-400 text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wide">PC/Mobil</span>
+</div>
+<p class="text-text-secondary text-xs mt-0.5 truncate">64 Adet Elmas Alma Kodu</p>
+</div>
+</div>
+<div class="bg-gray-50 dark:bg-[#191022] rounded-lg p-3 flex justify-between items-center border border-gray-200 dark:border-white/5 group active:bg-gray-100 dark:active:bg-[#20152b] transition-colors cursor-pointer">
+<code class="text-primary font-mono text-sm font-medium">/give @p diamond 64</code>
+<span class="material-symbols-outlined text-text-secondary group-hover:text-primary transition-colors text-xl">content_copy</span>
+</div>
+</div>
+<!-- Card 3: Guide/Walkthrough -->
+<div class="bg-white dark:bg-surface-dark rounded-xl p-4 shadow-sm border border-gray-100 dark:border-white/5 flex flex-col gap-3">
+<div class="flex items-start gap-3">
+<img class="w-12 h-12 rounded-lg object-cover shadow-sm bg-gray-800" data-alt="Cyberpunk futuristic soldier" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD58p2j0RSsX2mnep9a4bZ6aQmBR2dmhW9OhSx_S57ogXpAN519MVLGQyepftQL88kA_aYxtgQdpAR3CLcoAxpWEIrT6FLSa5PJ15oDejV4FVnHAF9BFaxqk1nn88ZpkfUt5cJSyGZAhAm89XmyLL5oanAmkfqGqvD6w_jxNMWKwBP6Vm2val7zDVafSKvMoSp1qBzCLB5hhIxG5zRw-c0iWQTEydCIPaC5SHf8a2mJbVbfmem8lgoh4dEbDYATLIsaaIEsren8nvbt"/>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h4 class="text-slate-900 dark:text-white font-bold text-base truncate">Valorant</h4>
+<span class="bg-blue-500/10 text-blue-600 dark:text-blue-400 text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wide">Rehber</span>
+</div>
+<p class="text-text-secondary text-xs mt-0.5 truncate">Sova Lineups - Ascent Haritası</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<p class="text-slate-600 dark:text-gray-300 text-sm line-clamp-2 leading-relaxed">
+                    Ascent B bölgesine saldırırken kullanabileceğiniz en etkili 3 görüş oku taktiği. Garaj bölgesinden atılan...
+                </p>
+</div>
+<button class="w-full py-2 mt-1 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary text-sm font-semibold transition-colors flex items-center justify-center gap-1">
+                Rehberi Oku
+                <span class="material-symbols-outlined text-base">arrow_forward</span>
+</button>
+</div>
+<!-- Card 4: Strategy -->
+<div class="bg-white dark:bg-surface-dark rounded-xl p-4 shadow-sm border border-gray-100 dark:border-white/5 flex flex-col gap-3">
+<div class="flex items-start gap-3">
+<img class="w-12 h-12 rounded-lg object-cover shadow-sm bg-gray-800" data-alt="Clash of Clans fantasy village abstract" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfd-mp42-byH8WAiPwJHb7wiTLKtvMcUnAw1gFDbNlgT8fe4NyHZ5cfjDOf8LfbplyOdguZa1hSqeyYq-I7yOj6gcafFbu22n5nFyNpU6W0Uj6TMpt-sQdX6rZj93UZbRJXGXFKoNGyQdE8CPiOr2pJxxM4qOuxBAbMP3B_4GFyI4IYybKezpY-vVbv1V9eO00o5UCHvtdFhq_tv7c_xfpK4qg7JGY2eTXvQdYL85gpxpZ-PP6P5vWkt9GB0O763wwniw1bzZjB7Aq"/>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h4 class="text-slate-900 dark:text-white font-bold text-base truncate">Clash of Clans</h4>
+<span class="bg-orange-500/10 text-orange-600 dark:text-orange-400 text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wide">Taktik</span>
+</div>
+<p class="text-text-secondary text-xs mt-0.5 truncate">Belediye Binası 10 Saldırı Taktiği</p>
+</div>
+</div>
+<p class="text-slate-600 dark:text-gray-300 text-sm line-clamp-2 leading-relaxed">
+                 Ejderha ve Balon kombinasyonu ile 3 yıldız almak için ordunuzu nasıl konuşlandırmanız gerektiği hakkında detaylı...
+            </p>
+<button class="w-full py-2 mt-1 rounded-lg bg-surface-light dark:bg-[#191022] border border-gray-200 dark:border-white/10 hover:border-primary/50 text-text-secondary hover:text-white text-sm font-medium transition-colors">
+                Devamını Gör
+            </button>
+</div>
+</div>
+<!-- Bottom Navigation -->
+<div class="fixed bottom-0 left-0 z-50 w-full h-20 bg-white/90 dark:bg-background-dark/95 backdrop-blur-lg border-t border-gray-200 dark:border-white/5">
+<div class="grid h-full max-w-lg grid-cols-4 mx-auto font-medium">
+<button class="inline-flex flex-col items-center justify-center px-5 group" type="button">
+<span class="material-symbols-outlined text-slate-400 dark:text-gray-500 group-hover:text-primary dark:group-hover:text-primary transition-colors text-2xl mb-1">newspaper</span>
+<span class="text-[10px] text-slate-400 dark:text-gray-500 group-hover:text-primary dark:group-hover:text-primary transition-colors">Haberler</span>
+</button>
+<button class="inline-flex flex-col items-center justify-center px-5 group" type="button">
+<div class="relative">
+<span class="material-symbols-outlined text-primary text-2xl mb-1" style="font-variation-settings: 'FILL' 1;">videogame_asset</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+</div>
+<span class="text-[10px] text-primary font-bold">Hileler</span>
+</button>
+<button class="inline-flex flex-col items-center justify-center px-5 group" type="button">
+<span class="material-symbols-outlined text-slate-400 dark:text-gray-500 group-hover:text-primary dark:group-hover:text-primary transition-colors text-2xl mb-1">memory</span>
+<span class="text-[10px] text-slate-400 dark:text-gray-500 group-hover:text-primary dark:group-hover:text-primary transition-colors">Sistem</span>
+</button>
+<button class="inline-flex flex-col items-center justify-center px-5 group" type="button">
+<span class="material-symbols-outlined text-slate-400 dark:text-gray-500 group-hover:text-primary dark:group-hover:text-primary transition-colors text-2xl mb-1">forum</span>
+<span class="text-[10px] text-slate-400 dark:text-gray-500 group-hover:text-primary dark:group-hover:text-primary transition-colors">Asistan</span>
+</button>
+</div>
+</div>
+</body></html>

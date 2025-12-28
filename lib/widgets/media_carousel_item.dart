@@ -33,10 +33,7 @@ class MediaCarouselItem extends StatelessWidget {
               height: 112,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(
-                  color: Colors.white.withOpacity(0.1),
-                  width: 1,
-                ),
+                border: Border.all(color: Colors.white12, width: 1),
               ),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(12),
@@ -61,7 +58,7 @@ class MediaCarouselItem extends StatelessWidget {
                     if (isVideo)
                       Positioned.fill(
                         child: Container(
-                          color: Colors.black.withOpacity(0.2),
+                          color: Colors.black26,
                           child: const Center(
                             child: Icon(
                               Icons.play_circle_outline,

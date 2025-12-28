@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:my_game_ai/l10n/app_localizations.dart';
 import '../core/theme/app_colors.dart';
+import '../core/locale/locale_provider.dart';
 import '../data/mock_profile_data.dart';
 import '../models/user_profile.dart';
 import '../widgets/add_game_card.dart';
 import '../widgets/favorite_game_card.dart';
 import '../widgets/profile_stat_card.dart';
+import '../main.dart';
 
 /// The user profile page displaying personal information and statistics.
 ///
@@ -51,15 +54,21 @@ class _ProfilePageState extends State<ProfilePage> {
           (isDark ? AppColors.backgroundDark : AppColors.backgroundLight)
               .withOpacity(0.9),
       elevation: 0,
-      title: const Text(
-        'Profilim',
-        style: TextStyle(
+      title: Text(
+        AppLocalizations.of(context)!.myProfile,
+        style: const TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.w700,
           letterSpacing: -0.5,
         ),
       ),
       actions: [
+        IconButton(
+          icon: const Icon(Icons.language),
+          onPressed: () {
+            _showLanguageDialog();
+          },
+        ),
         IconButton(
           icon: const Icon(Icons.settings_outlined),
           onPressed: () {
@@ -74,6 +83,53 @@ class _ProfilePageState extends State<ProfilePage> {
           color: isDark ? Colors.white.withOpacity(0.05) : Colors.grey.shade200,
         ),
       ),
+    );
+  }
+
+  void _showLanguageDialog() {
+    final l10n = AppLocalizations.of(context)!;
+    showDialog(
+      context: context,
+      builder: (dialogContext) {
+        return AlertDialog(
+          backgroundColor: AppColors.surfaceDark,
+          title: Text(
+            l10n.selectLanguage,
+            style: const TextStyle(color: Colors.white),
+          ),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ListTile(
+                leading: const Text('🇹🇷', style: TextStyle(fontSize: 24)),
+                title: Text(
+                  l10n.turkish,
+                  style: const TextStyle(color: Colors.white),
+                ),
+                onTap: () {
+                  ChangeNotifierProvider.of<LocaleProvider>(
+                    context,
+                  ).setLocale(const Locale('tr'));
+                  Navigator.pop(dialogContext);
+                },
+              ),
+              ListTile(
+                leading: const Text('🇬🇧', style: TextStyle(fontSize: 24)),
+                title: Text(
+                  l10n.english,
+                  style: const TextStyle(color: Colors.white),
+                ),
+                onTap: () {
+                  ChangeNotifierProvider.of<LocaleProvider>(
+                    context,
+                  ).setLocale(const Locale('en'));
+                  Navigator.pop(dialogContext);
+                },
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 
@@ -164,7 +220,7 @@ class _ProfilePageState extends State<ProfilePage> {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
               decoration: BoxDecoration(
-                color: AppColors.primary.withOpacity(0.1),
+                color: AppColors.primary.withAlpha(26),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Row(
@@ -200,14 +256,18 @@ class _ProfilePageState extends State<ProfilePage> {
                   foregroundColor: Colors.white,
                   padding: const EdgeInsets.symmetric(vertical: 14),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(24),
+                    borderRadius: BorderRadius.circular(12),
                   ),
-                  elevation: 4,
+                  elevation: 8,
                   shadowColor: AppColors.primary.withOpacity(0.3),
                 ),
-                child: const Text(
-                  'Profili Düzenle',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+                child: Text(
+                  AppLocalizations.of(context)!.editProfile,
+                  style: const TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w700,
+                    letterSpacing: 1.2,
+                  ),
                 ),
               ),
             ),

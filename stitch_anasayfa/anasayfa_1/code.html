@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Yapay Zeka Sohbeti - Oyun Asistanı</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#7f0df2",
+                        "primary-dark": "#5e0ba6",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#191022",
+                        "surface-dark": "#261834",
+                        "surface-highlight": "#362249",
+                        "chat-bubble-ai": "#261834",
+                        "chat-bubble-user": "#7f0df2"
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "2xl": "2.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>.chat-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+        .chat-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .chat-scroll::-webkit-scrollbar-thumb {
+            background-color: rgba(127, 13, 242, 0.2);
+            border-radius: 20px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased overscroll-none">
+<div class="relative flex h-[100dvh] w-full flex-col bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display overflow-hidden">
+<div class="shrink-0 z-30 flex items-center bg-white/80 dark:bg-surface-dark/80 backdrop-blur-md px-4 py-3 border-b border-slate-200 dark:border-white/5 shadow-sm">
+<button class="flex items-center justify-center size-10 -ml-2 rounded-full hover:bg-slate-100 dark:hover:bg-surface-highlight transition-colors group">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors">arrow_back</span>
+</button>
+<div class="flex items-center gap-3 ml-1 flex-1">
+<div class="relative flex items-center justify-center size-10 rounded-full bg-gradient-to-tr from-cyan-500 to-blue-500 shadow-lg shadow-cyan-500/20">
+<span class="material-symbols-outlined text-white text-xl">smart_toy</span>
+<div class="absolute bottom-0 right-0 size-2.5 bg-green-500 rounded-full border-2 border-white dark:border-surface-dark"></div>
+</div>
+<div>
+<h2 class="text-slate-900 dark:text-white text-base font-bold leading-tight">GameBot AI</h2>
+<p class="text-xs text-primary font-medium">Çevrimiçi • Oyun Uzmanı</p>
+</div>
+</div>
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-slate-100 dark:hover:bg-surface-highlight transition-colors">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300">more_vert</span>
+</button>
+</div>
+<div class="flex-1 overflow-y-auto chat-scroll p-4 space-y-6 scroll-smooth pb-24">
+<div class="flex justify-center my-4">
+<span class="text-[10px] font-bold uppercase tracking-widest text-slate-400 bg-slate-200/50 dark:bg-white/5 px-3 py-1 rounded-full">Bugün</span>
+</div>
+<div class="flex gap-3 max-w-[85%]">
+<div class="shrink-0 flex items-start pt-1">
+<div class="flex items-center justify-center size-8 rounded-full bg-gradient-to-tr from-cyan-500 to-blue-500 shadow-md">
+<span class="material-symbols-outlined text-white text-sm">smart_toy</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="bg-white dark:bg-surface-dark px-4 py-3 rounded-2xl rounded-tl-none shadow-sm border border-slate-100 dark:border-white/5">
+<p class="text-slate-700 dark:text-slate-200 text-sm leading-relaxed">
+                            Merhaba Batuhan! 👋 Ben senin kişisel oyun asistanınım. Yeni çıkan oyunlar, zorlandığın bölümler için hileler veya en iyi ekipman tavsiyeleri hakkında bana her şeyi sorabilirsin. Bugün hangi oyunu konuşalım?
+                        </p>
+</div>
+<span class="text-[10px] text-slate-400 ml-1">10:23</span>
+</div>
+</div>
+<div class="flex gap-3 max-w-[85%] ml-auto justify-end">
+<div class="flex flex-col gap-1 items-end">
+<div class="bg-primary text-white px-4 py-3 rounded-2xl rounded-tr-none shadow-md shadow-primary/20">
+<p class="text-sm leading-relaxed">GTA 6 hakkında bilinen son sızıntılar neler? Harita büyüklüğü hakkında bilgi var mı?</p>
+</div>
+<span class="text-[10px] text-slate-400 mr-1 flex items-center gap-1">
+                        10:25
+                        <span class="material-symbols-outlined text-[12px] text-primary">done_all</span>
+</span>
+</div>
+<div class="shrink-0 flex items-start pt-1">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-8 border border-slate-200 dark:border-white/10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDW6QnHz49L8UkGOyoizEimwKi7ILnrs0q0ZBCM8UGPPtziIF4fPpR4qXDAwTPkuhEgBGq7k-9yyBl2cJhvqshRLTD32T0Zl-nylI0sFLkHrbQFRNSFY7D2H9ik5wx_ztBihKNlTE6xLJamHnQWvkSQu0zilW44CS_mzgKVZ3CnrTk8f_bQzPYpz_v2h8f_91T_YXgNrTRUmt5Z848XpfOSJybhkyNEy6O1jb0Vpo25SK7qa3kvv2_voTu68Q-CY-lIkcsCK15FFTUs");'></div>
+</div>
+</div>
+<div class="flex gap-3 max-w-[90%]">
+<div class="shrink-0 flex items-start pt-1">
+<div class="flex items-center justify-center size-8 rounded-full bg-gradient-to-tr from-cyan-500 to-blue-500 shadow-md">
+<span class="material-symbols-outlined text-white text-sm">smart_toy</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="bg-white dark:bg-surface-dark px-4 py-3 rounded-2xl rounded-tl-none shadow-sm border border-slate-100 dark:border-white/5">
+<div class="text-slate-700 dark:text-slate-200 text-sm leading-relaxed space-y-2">
+<p><strong class="text-primary font-semibold">GTA 6 Sızıntıları:</strong></p>
+<p>Rockstar Games'in sızdırılan verilerine ve fragmana göre şu detaylar öne çıkıyor:</p>
+<ul class="list-disc list-inside space-y-1 ml-1 marker:text-primary">
+<li><strong>Konum:</strong> Oyun modern Vice City (Miami) ve çevresinde geçiyor.</li>
+<li><strong>Harita:</strong> GTA V haritasından yaklaşık <span class="bg-primary/10 text-primary px-1 rounded text-xs font-bold">2 kat daha büyük</span> olacağı tahmin ediliyor.</li>
+<li><strong>Karakterler:</strong> Lucia ve Jason adında iki ana karakteri yöneteceğiz (Bonnie &amp; Clyde temalı).</li>
+</ul>
+<p class="mt-2 text-xs text-slate-400 italic border-l-2 border-primary/50 pl-2">Not: Resmi çıkış tarihi 2025 olarak açıklandı.</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mt-1 ml-1">
+<button class="text-xs font-medium text-primary bg-primary/5 border border-primary/20 px-3 py-1.5 rounded-lg hover:bg-primary/10 transition-colors">Sistem gereksinimleri?</button>
+<button class="text-xs font-medium text-primary bg-primary/5 border border-primary/20 px-3 py-1.5 rounded-lg hover:bg-primary/10 transition-colors">Fiyat tahmini</button>
+</div>
+<span class="text-[10px] text-slate-400 ml-1 mt-1">10:26</span>
+</div>
+</div>
+<div class="flex gap-3 max-w-[85%] ml-auto justify-end">
+<div class="flex flex-col gap-1 items-end">
+<div class="bg-primary text-white px-4 py-3 rounded-2xl rounded-tr-none shadow-md shadow-primary/20">
+<p class="text-sm leading-relaxed">Valorant yeni ajan ne zaman geliyor?</p>
+</div>
+<span class="text-[10px] text-slate-400 mr-1 flex items-center gap-1">
+                        10:28
+                        <span class="material-symbols-outlined text-[12px] text-slate-500">check</span>
+</span>
+</div>
+<div class="shrink-0 flex items-start pt-1">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-8 border border-slate-200 dark:border-white/10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDW6QnHz49L8UkGOyoizEimwKi7ILnrs0q0ZBCM8UGPPtziIF4fPpR4qXDAwTPkuhEgBGq7k-9yyBl2cJhvqshRLTD32T0Zl-nylI0sFLkHrbQFRNSFY7D2H9ik5wx_ztBihKNlTE6xLJamHnQWvkSQu0zilW44CS_mzgKVZ3CnrTk8f_bQzPYpz_v2h8f_91T_YXgNrTRUmt5Z848XpfOSJybhkyNEy6O1jb0Vpo25SK7qa3kvv2_voTu68Q-CY-lIkcsCK15FFTUs");'></div>
+</div>
+</div>
+<div class="flex gap-3 max-w-[85%]">
+<div class="shrink-0 flex items-start pt-1">
+<div class="flex items-center justify-center size-8 rounded-full bg-gradient-to-tr from-cyan-500 to-blue-500 shadow-md">
+<span class="material-symbols-outlined text-white text-sm">smart_toy</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="bg-white dark:bg-surface-dark px-4 py-3 rounded-2xl rounded-tl-none shadow-sm border border-slate-100 dark:border-white/5 w-16 h-10 flex items-center justify-center">
+<div class="flex gap-1">
+<div class="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce" style="animation-delay: 0ms"></div>
+<div class="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce" style="animation-delay: 150ms"></div>
+<div class="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce" style="animation-delay: 300ms"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="shrink-0 p-4 bg-white dark:bg-surface-dark border-t border-slate-200 dark:border-white/5 pb-8 relative z-40">
+<div class="flex items-end gap-2">
+<button class="shrink-0 flex items-center justify-center size-10 rounded-full bg-slate-100 dark:bg-surface-highlight text-slate-500 dark:text-slate-300 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+<div class="flex-1 bg-slate-100 dark:bg-surface-highlight rounded-2xl flex items-center min-h-[48px] px-4 py-2 border border-transparent focus-within:border-primary/50 transition-colors">
+<textarea class="w-full bg-transparent border-0 p-0 text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:ring-0 resize-none max-h-24" placeholder="Oyun hakkında bir soru sor..." rows="1" style="height: 24px;"></textarea>
+</div>
+<button class="shrink-0 flex items-center justify-center size-12 rounded-full bg-primary text-white shadow-lg shadow-primary/30 active:scale-95 transition-transform hover:bg-primary-dark">
+<span class="material-symbols-outlined ml-0.5">send</span>
+</button>
+</div>
+<p class="text-[10px] text-center text-slate-400 mt-2">Yapay zeka oyunlarla ilgili sorularda yardımcı olabilir.</p>
+</div>
+</div>
+
+</body></html>

@@ -126,7 +126,7 @@ class _SystemRequirementsPageState extends State<SystemRequirementsPage> {
                         vertical: 4,
                       ),
                       decoration: BoxDecoration(
-                        color: AppColors.primary.withOpacity(0.1),
+                        color: AppColors.primary.withAlpha(26),
                         borderRadius: BorderRadius.circular(4),
                         border: Border.all(
                           color: AppColors.primary.withOpacity(0.2),
@@ -307,7 +307,7 @@ class _SystemRequirementsPageState extends State<SystemRequirementsPage> {
         borderRadius: BorderRadius.circular(24),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.2),
+            color: Colors.black26,
             blurRadius: 20,
             offset: const Offset(0, 4),
           ),

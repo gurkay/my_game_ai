@@ -5,8 +5,10 @@ import '../data/mock_news_data.dart';
 import '../widgets/category_chip.dart';
 import '../widgets/featured_news_card.dart';
 import '../widgets/news_card.dart';
+import 'cheats_page.dart';
 import 'game_detail_page.dart';
 import 'profile_page.dart';
+import 'forum_page.dart';
 
 /// The main homepage screen displaying news feed.
 ///
@@ -22,13 +24,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _selectedCategoryIndex = 0;
 
-  final List<String> _categories = [
-    'Tümü',
-    'Haberler',
-    'Hileler',
-    'Güncellemeler',
-    'Soru-Cevap',
-  ];
+  final List<String> _categories = ['Tümü', 'Hileler', 'Soru-Cevap'];
 
   @override
   Widget build(BuildContext context) {
@@ -230,6 +226,17 @@ class _HomePageState extends State<HomePage> {
                 setState(() {
                   _selectedCategoryIndex = index;
                 });
+                if (index == 1) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const CheatsPage()),
+                  );
+                } else if (index == 2) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const ForumPage()),
+                  );
+                }
               },
             );
           },
@@ -330,7 +337,7 @@ class _HomePageState extends State<HomePage> {
           border: Border.all(color: Colors.white.withOpacity(0.1), width: 1),
           boxShadow: [
             BoxShadow(
-              color: AppColors.info.withOpacity(0.3),
+              color: AppColors.info.withAlpha(77),
               blurRadius: 20,
               offset: const Offset(0, 4),
             ),
@@ -365,15 +372,12 @@ class _HomePageState extends State<HomePage> {
           Container(
             height: 64,
             decoration: BoxDecoration(
-              color: AppColors.surfaceDark.withOpacity(0.9),
+              color: AppColors.surfaceDark.withAlpha(230),
               borderRadius: BorderRadius.circular(32),
-              border: Border.all(
-                color: Colors.white.withOpacity(0.05),
-                width: 1,
-              ),
+              border: Border.all(color: Colors.white.withAlpha(13), width: 1),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.2),
+                  color: Colors.black26,
                   blurRadius: 20,
                   offset: const Offset(0, 4),
                 ),
@@ -383,9 +387,31 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 _buildNavItem(Icons.home, 'Anasayfa', isSelected: true),
-                _buildNavItem(Icons.explore_outlined, null),
+                _buildNavItem(
+                  Icons.explore_outlined,
+                  null,
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const CheatsPage(),
+                      ),
+                    );
+                  },
+                ),
                 const SizedBox(width: 56), // Space for center FAB
-                _buildNavItem(Icons.forum_outlined, null),
+                _buildNavItem(
+                  Icons.forum_outlined,
+                  null,
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ForumPage(),
+                      ),
+                    );
+                  },
+                ),
                 _buildNavItem(
                   Icons.person_outline,
                   null,

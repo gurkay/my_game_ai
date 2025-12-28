@@ -7,6 +7,7 @@ import '../widgets/cheat_card.dart';
 import '../widgets/game_update_card.dart';
 import '../widgets/media_carousel_item.dart';
 import '../widgets/rating_statistics_card.dart';
+import 'forum_page.dart';
 import 'system_requirements_page.dart';
 
 /// The game detail page displaying comprehensive game information.
@@ -147,7 +148,7 @@ class _GameDetailPageState extends State<GameDetailPage>
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                    Colors.black.withOpacity(0.6),
+                    Colors.black54,
                     Colors.transparent,
                     Theme.of(context).scaffoldBackgroundColor,
                   ],
@@ -284,9 +285,7 @@ class _GameDetailPageState extends State<GameDetailPage>
                       decoration: BoxDecoration(
                         color: const Color(0xFF261A33),
                         borderRadius: BorderRadius.circular(8),
-                        border: Border.all(
-                          color: Colors.white.withOpacity(0.05),
-                        ),
+                        border: Border.all(color: Colors.white.withAlpha(13)),
                       ),
                       child: Row(
                         children: [
@@ -648,7 +647,10 @@ class _GameDetailPageState extends State<GameDetailPage>
                   color: isDark ? Colors.white : AppColors.textPrimary,
                 ),
                 onPressed: () {
-                  debugPrint('Open forum');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const ForumPage()),
+                  );
                 },
               ),
             ),

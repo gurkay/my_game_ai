@@ -28,7 +28,7 @@ class NewsCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.05),
+              color: Colors.black.withAlpha(13),
               blurRadius: 4,
               offset: const Offset(0, 2),
             ),
@@ -62,7 +62,7 @@ class NewsCard extends StatelessWidget {
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
           decoration: BoxDecoration(
-            color: Color(newsItem.category.colorValue).withOpacity(0.1),
+            color: Color(newsItem.category.colorValue).withAlpha(26),
             borderRadius: BorderRadius.circular(12),
           ),
           child: Text(
